@@ -1,12 +1,17 @@
 package com.tobeto.a.spring.intro.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
 @Table(name = "transactions")
 @Entity
+@Getter
+@Setter
 public class Transaction {
     @Id
     @Column(name = "trans_ID")
@@ -18,19 +23,19 @@ public class Transaction {
 
 
     @ManyToOne
-    @JoinColumn(name = "rental_id")
+    @JoinColumn(name = "rental_ID")
     private Rental rental;
 
     @ManyToOne
-    @JoinColumn(name = "car_id")
+    @JoinColumn(name = "car_ID")
     private Car car;
 
     @ManyToOne
-    @JoinColumn(name = "cust_id")
+    @JoinColumn(name = "cust_ID")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "admin_id")
+    @JoinColumn(name = "admin_ID")
     private Admin admin;
 
     @Column(name = "trans_date")

@@ -1,11 +1,15 @@
 package com.tobeto.a.spring.intro.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 @Table(name = "admins")
 @Entity
+@Getter
+@Setter
 public class Admin {
     @Id
     @Column(name = "admin_ID")
@@ -33,6 +37,6 @@ public class Admin {
     @Column(name = "admin_pass")
     private String adminPassword;
 
-    @OneToMany(mappedBy = "admin_ID")
+    @OneToMany(mappedBy = "admin")
     private List<Transaction> transactions;
 }

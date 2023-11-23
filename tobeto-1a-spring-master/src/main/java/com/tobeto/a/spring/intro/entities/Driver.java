@@ -1,9 +1,13 @@
 package com.tobeto.a.spring.intro.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Table(name = "drivers")
 @Entity
+@Getter
+@Setter
 public class Driver {
     @Id
     @Column(name = "driver_ID")

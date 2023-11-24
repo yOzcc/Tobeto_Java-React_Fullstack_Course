@@ -26,6 +26,9 @@ public class Car {
     @Column(name = "car_status")
     private String carStatus;
 
+    @Column(name = "car_number")
+    private int carNumber;
+
 
     @OneToMany(mappedBy = "trans_ID")
     private List<Transaction> transactions;
